@@ -54,23 +54,18 @@ module.exports =
                 if (this.params.op == ' ')
                      this.params.op = '+';
                 if (this.params.op) {
-
                     switch (this.params.op) {
 
                         case '+':
-                            if(!(this.checkParamsCount(3))){
+                            if(!(this.checkParamsCount(3)))
                                 this.HttpContext.response.JSON(this.params);
-                            }
-                            else if (this.HttpContext.path.params.x == undefined || this.HttpContext.path.params.y == undefined) {
+                            else if (this.HttpContext.path.params.x == undefined || this.HttpContext.path.params.y == undefined){
                                 this.HttpContext.path.params.error = "one of the parameter is missing";
-                                this.HttpContext.response.JSON(this.HttpContext.path.params);
-                            }
-                            else {
-                                
+                                this.HttpContext.response.JSON(this.HttpContext.path.params)
+                            }   
+                            else {                      
                                  let valeurxadd = parseInt(this.HttpContext.path.params.x)
                                 let valeuryadd = parseInt(this.HttpContext.path.params.y)
-
-
                                 if (isNaN(valeurxadd)) {
                                     this.HttpContext.path.params.error = "'x' parameter is not a number";
                                     this.HttpContext.response.JSON(this.HttpContext.path.params);
@@ -94,9 +89,8 @@ module.exports =
 
                             break;
                         case '-':
-                            if(!(this.checkParamsCount(3))){
+                            if(!(this.checkParamsCount(3)))
                                 this.HttpContext.response.JSON(this.params);
-                            }
                             else if (this.HttpContext.path.params.x == undefined || this.HttpContext.path.params.y == undefined) {
                                 this.HttpContext.path.params.error = "one of the parameter is missing";
                                 this.HttpContext.response.JSON(this.HttpContext.path.params);
@@ -119,9 +113,8 @@ module.exports =
                             }
                             break;
                         case '*':
-                            if(!(this.checkParamsCount(3))){
+                            if(!(this.checkParamsCount(3)))
                                 this.HttpContext.response.JSON(this.params);
-                            }
                             else if (this.HttpContext.path.params.x == undefined || this.HttpContext.path.params.y == undefined) {
                                 this.HttpContext.path.params.error = "one of the parameter is missing";
                                 this.HttpContext.response.JSON(this.HttpContext.path.params);
@@ -145,9 +138,8 @@ module.exports =
 
                             break;
                         case '/':
-                            if(!(this.checkParamsCount(3))){
+                            if(!(this.checkParamsCount(3)))
                                 this.HttpContext.response.JSON(this.params);
-                            }
                             else if (this.HttpContext.path.params.x == undefined || this.HttpContext.path.params.y == undefined) {
                                 this.HttpContext.path.params.error = "one of the parameter is missing";
                                 this.HttpContext.response.JSON(this.HttpContext.path.params);
